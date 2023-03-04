@@ -3,6 +3,6 @@
 [ -e ./path ] || return 1
 TOOLS=`cat ./path`
 export PATH="${TOOLS}/tools/bin:${TOOLS}/riscv-gcc/riscv64-unknown-elf/bin:${TOOLS}:${TOOLS}/eclipse:${PATH}"
-export LD_PRELOAD="${TOOLS}/ncurses/lib/libncurses.so.5.6"
+#export LD_PRELOAD="${TOOLS}/ncurses/lib/libncurses.so.5.6"
 
 eclipse >/dev/null 2> /dev/null &
