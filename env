@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -e ./path ] || return 1
+TOOLS=`cat ./path`
+export PATH="${TOOLS}/tools/bin:${TOOLS}/riscv-gcc/riscv64-unknown-elf/bin:${TOOLS}:${TOOLS}/eclipse:${PATH}"
+exec $SHELL
