@@ -1,5 +1,3 @@
-#include <stdarg.h>
-#include <stdio.h>
 
 //Вспомогательная функция - добавляет число num к строке str и возвращает насколько изменилась длина
 int add_int_to_str(int num, char *str)
@@ -78,7 +76,11 @@ int add_hex_to_str(unsigned int num, char *str) {
     return index;
 }
 
-//Аналог sprintf, поддерживает форматы %s, %c, %d, %x (без лидирующих нулей)
+#define va_start(v,l)	__builtin_va_start(v,l)
+#define va_end(v)	__builtin_va_end(v)
+#define va_arg(v,l)	__builtin_va_arg(v,l)
+#define va_list __builtin_va_list
+
 int bl_sprintf(char *str, const char *format, ...)
 {
 	va_list arg_list;
@@ -134,12 +136,3 @@ int bl_sprintf(char *str, const char *format, ...)
 	return len;
 }
 
-int main()
-{
-	char buffer[256];
-	int total_len = bl_sprintf(buffer, "%s with %s and digits(%d) and chars(%c) and hexadecimal(%x)", "Working", "strings", -55, 'b', 412);
-	for (int i = 0; i < total_len; ++i)
-		printf("%c", buffer[i]);
-
-	return 0;
-}

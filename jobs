@@ -1,0 +1,16 @@
+1. Assembly bindings to C (me)
+2. Timer init (dan)
+3. Irq init 
+	a. IRQ 0 (UART) - me
+	b. IRQ 1 (Timer) - me
+	c. IRQ 2 (keyboard) - dan
+	d. IRQ 3 (any output) - dan
+4. UART (them)
+5. femtolibc (them)
+6. docs (me/dan)
+7. general board init (me)
+
+== OPTIONAL ==
+
+7. I2C
+8. SPI
